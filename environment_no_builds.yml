@@ -1,5 +1,7 @@
-name: learn-env-py38
+name: learn-env
 channels:
+  - huggingface
+  - pytorch
   - conda-forge
   - defaults
 dependencies:
@@ -32,9 +34,9 @@ dependencies:
   - bz2file=0.98
   - bzip2=1.0.8
   - c-ares=1.16.1
-  - ca-certificates=2020.10.14
+  - ca-certificates=2020.12.8
   - cachetools=4.1.1
-  - certifi=2020.6.20
+  - certifi=2020.12.5
   - cffi=1.14.3
   - cftime=1.2.1
   - chardet=3.0.4
@@ -47,11 +49,13 @@ dependencies:
   - compiler-rt_win-64=11.0.0
   - convertdate=2.2.2
   - cryptography=3.1.1
+  - cudatoolkit=11.0.221
   - curl=7.71.1
   - cvxpy=1.1.6
   - cvxpy-base=1.1.6
   - cycler=0.10.0
   - cython=0.29.21
+  - dataclasses=0.7
   - decorator=4.4.2
   - defusedxml=0.6.0
   - docutils=0.15.2
@@ -61,6 +65,7 @@ dependencies:
   - ephem=3.7.7.1
   - et_xmlfile=1.0.1
   - fbprophet=0.7.1
+  - filelock=3.0.12
   - folium=0.11.0
   - freetype=2.10.3
   - future=0.18.2
@@ -96,17 +101,20 @@ dependencies:
   - jmespath=0.10.0
   - joblib=0.17.0
   - jpeg=9d
+  - json5=0.9.5
   - jsonschema=3.2.0
   - jupyter=1.0.0
   - jupyter_client=6.1.7
   - jupyter_console=6.2.0
   - jupyter_contrib_core=0.3.3
   - jupyter_contrib_nbextensions=0.5.1
-  - jupyter_core=4.6.3
+  - jupyter_core=4.7.0
   - jupyter_highlight_selected_word=0.2.0
   - jupyter_latex_envs=1.4.6
   - jupyter_nbextensions_configurator=0.4.1
+  - jupyterlab=2.2.6
   - jupyterlab_pygments=0.1.2
+  - jupyterlab_server=1.2.0
   - kiwisolver=1.2.0
   - korean_lunar_calendar=0.2.1
   - krb5=1.18.2
@@ -125,10 +133,12 @@ dependencies:
   - libsodium=1.0.18
   - libssh2=1.9.0
   - libtiff=4.1.0
+  - libuv=1.40.0
   - libxml2=2.9.10
   - libxslt=1.1.33
   - lunarcalendar=0.0.9
   - lxml=4.6.1
+  - lz4=2.2.1
   - lz4-c=1.8.1.2
   - m2w64-binutils=2.25.1
   - m2w64-bzip2=1.0.6
@@ -157,7 +167,6 @@ dependencies:
   - m2w64-winpthreads-git=5.0.0.4634.697f757
   - m2w64-zlib=1.2.8
   - markupsafe=1.1.1
-  - matplotlib=3.3.1
   - matplotlib-base=3.3.1
   - mistune=0.8.4
   - mkl=2019.4
@@ -172,16 +181,18 @@ dependencies:
   - nest-asyncio=1.4.1
   - netcdf4=1.5.4
   - networkx=2.5
+  - ninja=1.10.2
   - nltk=3.5
   - notebook=6.1.4
+  - numpy-base=1.19.2
   - olefile=0.46
   - openpyxl=3.0.5
-  - openssl=1.1.1h
+  - openssl=1.1.1i
   - osqp=0.6.1
   - packaging=20.4
   - pandas=1.1.3
   - pandasql=0.7.3
-  - pandoc=2.11
+  - pandoc=2.11.3.1
   - pandocfilters=1.4.2
   - parso=0.7.0
   - patsy=0.5.1
@@ -214,6 +225,7 @@ dependencies:
   - python=3.8.5
   - python-dateutil=2.8.1
   - python_abi=3.8
+  - pytorch=1.7.1
   - pytz=2020.1
   - pywin32=227
   - pywinpty=0.5.7
@@ -228,11 +240,13 @@ dependencies:
   - retrying=1.3.3
   - rsa=4.6
   - s3transfer=0.3.3
+  - sacremoses=master
   - scikit-learn=0.23.2
   - scikit-surprise=1.1.1
   - scipy=1.5.0
   - scs=2.1.2
   - seaborn=0.11.0
+  - seaborn-base=0.11.0
   - send2trash=1.5.0
   - setuptools=50.3.0
   - setuptools-git=1.2
@@ -250,9 +264,14 @@ dependencies:
   - threadpoolctl=2.1.0
   - thrift-cpp=0.11.0
   - tk=8.6.10
+  - tokenizers=0.9.4
+  - torchaudio=0.7.2
+  - torchvision=0.2.2
   - tornado=6.0.4
   - tqdm=4.50.2
   - traitlets=5.0.5
+  - transformers=4.1.1
+  - typing_extensions=3.7.4.3
   - uriparser=0.9.3
   - urllib3=1.25.10
   - vc=14.1
@@ -268,6 +287,7 @@ dependencies:
   - xlrd=1.2.0
   - xz=5.2.5
   - yaml=0.2.5
+  - yarl=1.5.1
   - zeromq=4.3.2
   - zipp=3.3.0
   - zlib=1.2.11
@@ -275,25 +295,36 @@ dependencies:
   - pip:
     - absl-py==0.10.0
     - astunparse==1.6.3
+    - colorlover==0.3.0
+    - cufflinks==0.17.3
+    - fsds==0.2.27
     - gast==0.3.3
     - google-auth-oauthlib==0.4.1
     - google-pasta==0.2.0
     - h5py==2.10.0
+    - imageio==2.9.0
     - keras==2.4.3
     - keras-preprocessing==1.1.2
     - markdown==3.3.2
+    - matplotlib==3.3.3
+    - missingno==0.4.2
     - numpy==1.18.5
     - oauthlib==3.1.0
     - opt-einsum==3.3.0
     - orc==0.1.0
     - pybind11==2.5.0
+    - pyperclip==1.8.1
+    - pywavelets==1.1.1
     - requests-oauthlib==1.3.0
+    - scikit-image==0.18.1
     - tensorboard==2.3.0
     - tensorboard-plugin-wit==1.7.0
     - tensorflow==2.3.1
     - tensorflow-estimator==2.3.0
     - termcolor==1.1.0
+    - tifffile==2020.12.8
+    - tzlocal==2.1
     - werkzeug==1.0.1
     - wrapt==1.12.1
     - xgboost==1.2.1
-    - yarl==1.5.1
+prefix: C:\Users\james\anaconda3\envs\learn-env
